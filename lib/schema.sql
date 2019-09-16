@@ -1,4 +1,4 @@
-CREATE TABLE cats_owners (
+CREATE TABLE series (
 cat_id INTEGER,
 owner_id INTEGER
 );
