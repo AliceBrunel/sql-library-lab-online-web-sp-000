@@ -8,17 +8,17 @@ id INTEGER PRIMARY KEY,
 title TEXT
 );
 
-CREATE TABLE series (
+CREATE TABLE authors (
 id INTEGER PRIMARY KEY,
 title TEXT
 );
 
-CREATE TABLE series (
+CREATE TABLE characters (
 id INTEGER PRIMARY KEY,
 title TEXT
 );
 
-CREATE TABLE series (
+CREATE TABLE books (
 id INTEGER PRIMARY KEY,
 title TEXT
 );
