@@ -1,4 +1,13 @@
 CREATE TABLE series (
-cat_id INTEGER,
-owner_id INTEGER
+id INTEGER PRIMARY KEY,
+title TEXT
 );
+
+CREATE TABLE series (
+id INTEGER PRIMARY KEY,
+title TEXT
+
+
+CREATE TABLE series (
+id INTEGER PRIMARY KEY,
+title TEXT
