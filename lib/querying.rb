@@ -5,25 +5,32 @@ WHERE series.id = 1 ORDER BY books.year;"
 end
 
 def select_name_and_motto_of_char_with_longest_motto
-  "SELECT characters.name, characters.motto, LENGTH(characters.motto) AS motto_length FROM characters
-ORDER BY motto_length DESC LIMIT 1;"
+  "SELECT characters.name, characters.motto FROM characters
+WHERE LENGTH(characters.motto) = 33
+;"
 end
 
 
 def select_value_and_count_of_most_prolific_species
-  "SELECT characters.name, characters.motto FROM characters
-WHERE LENGTH(characters.motto) = 33
-ORDER BY characters.motto DESC LIMIT 1;"
+  "SELECT characters.species, COUNT(characters.species) AS most_prolific FROM characters
+GROUP BY characters.species ORDER BY most_prolific DESC LIMIT 1;"
 end
 
 def select_name_and_series_subgenres_of_authors
-  "Write your SQL query here"
+  "SELECT authors.name, subgenres.name FROM authors
+INNER JOIN series ON series.author_id = authors.id
+JOIN subgenres ON series.subgenre_id = subgenres.id;"
 end
 
 def select_series_title_with_most_human_characters
-  "Write your SQL query here"
+  "SELECT series.title FROM series 
+INNER JOIN authors ON series.author_id = authors.id
+JOIN characters ON characters.author_id = authors.id
+WHERE characters.species = \"human\" LIMIT 1;"
 end
 
 def select_character_names_and_number_of_books_they_are_in
-  "Write your SQL query here"
+  "SELECT characters.name, COUNT(character_books.book_id) AS book_number FROM characters
+INNER JOIN character_books ON character_books.character_id = characters.id
+GROUP BY characters.name ORDER BY book_number DESC;"
 end
